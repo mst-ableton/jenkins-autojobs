@@ -85,7 +85,7 @@ def create_job(ref, template, config, ref_config):
     print('. job exists: %s' % job_obj.exists)
 
     try:
-        scm_el = job_obj.xml.xpath('scm[@class="hudson.plugins.git.GitSCM"]')[0]
+        scm_el = job_obj.xml.xpath('//scm[@class="hudson.plugins.git.GitSCM"]')[0]
     except IndexError:
         msg = 'Template job %s is not configured to use Git as an SCM'
         raise RuntimeError(msg % template)  # :bug:
